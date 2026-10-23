@@ -65,8 +65,8 @@
     .topbar svg { width: 14px; height: 14px; color: #dfb29b; }
     .site-header { position: sticky; top: 0; z-index: 30; background: rgba(255,253,251,.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(83,61,48,.09); }
     .nav-wrap { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; min-width: 0; width: 150px; text-decoration: none; }
-    .brand img { display:block; width: 150px; height: 88px; object-fit: contain; }
+    .brand { display: inline-flex; align-items: center; min-width: 0; width: 112px; text-decoration: none; }
+    .brand img { display:block; width: 112px; height: 66px; object-fit: contain; }
     .brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
     .brand-copy strong { font-size: 1rem; letter-spacing: .13em; }
     .brand-copy span { font-size: .66rem; color: var(--muted); letter-spacing: .09em; text-transform: uppercase; margin-top: 5px; }
@@ -90,9 +90,16 @@
     .hero-orbit { position: absolute; width: 86%; aspect-ratio: 1; border: 1px solid rgba(146,97,77,.27); border-radius: 50%; }
     .tooth-card { position: relative; z-index: 2; width: min(78%, 330px); aspect-ratio: 1 / 1.1; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, #fffdfb 0%, #f6e9e1 100%); border-radius: 47% 53% 40% 60% / 50% 43% 57% 50%; box-shadow: var(--shadow); border: 8px solid rgba(255,253,251,.55); }
     .tooth-card svg { width: 66%; max-width: 240px; height: auto; overflow: visible; }
-    .tooth-shine { position: absolute; background: white; border-radius: 50%; opacity: .8; }
-    .shine-one { width: 12px; height: 12px; right: 25%; top: 23%; }
-    .shine-two { width: 7px; height: 7px; left: 22%; bottom: 31%; }
+
+    .tooth-stage { position: relative; z-index: 2; width: min(92%, 380px); height: 380px; display: grid; place-items: center; perspective: 900px; }
+    .tooth-3d { position: relative; width: 230px; height: 260px; transform-style: preserve-3d; animation: tooth-spin 14s linear infinite; }
+    .tooth-3d svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .tooth-layer { position: absolute; inset: 0; transform: translateZ(var(--z)); }
+    .tooth-stage:hover .tooth-3d { animation-play-state: paused; }
+    @keyframes tooth-spin { from { transform: rotateX(6deg) rotateY(0deg); } to { transform: rotateX(6deg) rotateY(360deg); } }
+    .float-card { transition: opacity .35s ease; }
+    .float-card.is-changing { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) { .tooth-3d { animation: none; } }
     .float-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: 12px; max-width: 210px; padding: 14px 16px; border-radius: 15px; background: white; box-shadow: 0 12px 30px rgba(80,56,43,.12); }
     .float-card strong { display: block; font-size: .85rem; line-height: 1.2; }
     .float-card small { display: block; color: var(--muted); font-size: .73rem; margin-top: 3px; }
@@ -281,6 +288,7 @@
       .whatsapp-float { width: 56px; height: 56px; min-height: 0; padding: 0; right: 14px; bottom: 14px; }
       .whatsapp-float span { display: none; }
     }
+      .tooth-stage { height: 300px; transform: scale(.82); }
     @media (max-width: 360px) {
       .brand-copy span { display: none; }
       .hero-visual { min-height: 285px; }
@@ -347,7 +355,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" aria-label="ROMA Clínica Dental, inicio">
-        <img src="assets/logo-roma.png" alt="Logo de ROMA Clínica Dental" width="150" height="88">
+        <img src="assets/logo-roma.png" alt="Logo de ROMA Clínica Dental" width="112" height="66">
       </a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
       <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
@@ -375,19 +383,9 @@
         </div>
         <div class="hero-visual" aria-label="Ilustración dental decorativa">
           <div class="hero-blob"></div><div class="hero-orbit"></div>
-          <div class="tooth-card">
-            <svg viewBox="0 0 240 270" role="img" aria-label="Ilustración de un diente saludable">
-              <defs><linearGradient id="toothFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f2dfd3"/></linearGradient></defs>
-              <path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="url(#toothFill)" stroke="#b27c63" stroke-width="3.2" stroke-linejoin="round"/>
-              <path d="M57 57c-8 15-4 33 5 44M181 49c13 4 20 18 17 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
-              <path d="M75 116c14 10 28 13 45 13s33-4 46-13" fill="none" stroke="#e4c8ba" stroke-width="2.8" stroke-linecap="round"/>
-              <path d="M94 158c9 8 21 11 32 9" fill="none" stroke="#d9b19b" stroke-width="2.8" stroke-linecap="round"/>
-              <path d="m156 79 6 8 13-16" fill="none" stroke="#9b6c55" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="tooth-shine shine-one"></span><span class="tooth-shine shine-two"></span>
-          </div>
-          <div class="float-card float-top"><span class="float-icon"><svg><use href="#i-users"/></svg></span><span><strong>Niños y adultos</strong><small>Atención para cada etapa</small></span></div>
-          <div class="float-card float-bottom"><span class="float-icon"><svg><use href="#i-shield"/></svg></span><span><strong>Cuidado cercano</strong><small>Tu salud bucal, primero</small></span></div>
+          <div class="tooth-stage" aria-hidden="true"><div class="tooth-3d"><div class="tooth-layer" style="--z:-8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:0.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#f4e3d9" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/><path d="M57 57c-8 15-4 33 5 44M181 49c13 4 20 18 17 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/><path d="M75 116c14 10 28 13 45 13s33-4 46-13" fill="none" stroke="#e4c8ba" stroke-width="2.8" stroke-linecap="round"/><path d="M94 158c9 8 21 11 32 9" fill="none" stroke="#d9b19b" stroke-width="2.8" stroke-linecap="round"/></svg></div></div></div>
+          <div class="float-card float-top" id="floatTop"><span class="float-icon"><svg><use href="#i-users"/></svg></span><span><strong>Niños y adultos</strong><small>Atención para cada etapa</small></span></div>
+          <div class="float-card float-bottom" id="floatBottom"><span class="float-icon"><svg><use href="#i-shield"/></svg></span><span><strong>Cuidado cercano</strong><small>Tu salud bucal, primero</small></span></div>
         </div>
       </div>
     </section>
@@ -595,6 +593,33 @@
         track.addEventListener('scroll', update, { passive: true });
         window.addEventListener('resize', update);
         update();
+      }
+
+
+      const floatTop = document.getElementById('floatTop');
+      const floatBottom = document.getElementById('floatBottom');
+      const phrases = [
+        { icon: '#i-users', t: 'Niños y adultos', s: 'Atención para cada etapa' },
+        { icon: '#i-shield', t: 'Cuidado cercano', s: 'Tu salud bucal, primero' },
+        { icon: '#i-tooth', t: 'Distintas especialidades', s: 'Consultá por tu tratamiento' },
+        { icon: '#i-calendar', t: 'Turnos por WhatsApp', s: 'Rápido y directo con la clínica' }
+      ];
+      if (floatTop && floatBottom && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const fill = function (card, item) {
+          card.querySelector('use').setAttribute('href', item.icon);
+          card.querySelector('strong').textContent = item.t;
+          card.querySelector('small').textContent = item.s;
+        };
+        let k = 0;
+        setInterval(function () {
+          [floatTop, floatBottom].forEach(function (c) { c.classList.add('is-changing'); });
+          setTimeout(function () {
+            fill(floatTop, phrases[k % phrases.length]);
+            fill(floatBottom, phrases[(k + 1) % phrases.length]);
+            [floatTop, floatBottom].forEach(function (c) { c.classList.remove('is-changing'); });
+            k = (k + 2) % phrases.length;
+          }, 380);
+        }, 3600);
       }
 
       bookingForm.addEventListener('submit', function (event) {
