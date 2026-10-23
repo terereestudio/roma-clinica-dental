@@ -175,6 +175,7 @@
     .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--clay); box-shadow: 0 0 0 3px rgba(178,124,99,.13); }
     .form-submit { width: 100%; margin-top: 19px; }
     .form-fineprint { color: var(--muted); font-size: .73rem; margin: 12px 0 0; text-align: center; }
+    .fineprint-line { display: block; }
     .location-section { background: var(--paper); }
     .location-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; align-items: stretch; }
     .location-copy { padding: 16px 0; }
@@ -478,7 +479,7 @@
             <div class="field full"><label for="details">Comentario (opcional)</label><textarea id="details" name="details" placeholder="Contanos brevemente en qué podemos ayudarte"></textarea></div>
           </div>
           <button class="btn btn-primary form-submit" type="submit"><svg><use href="#i-whatsapp"/></svg> Continuar por WhatsApp</button>
-          <p class="form-fineprint">Esto no confirma automáticamente un turno. La clínica coordinará la disponibilidad por WhatsApp.</p>
+          <p class="form-fineprint"><span class="fineprint-line">Esto no confirma automáticamente un turno.</span><span class="fineprint-line">La clínica coordinará la disponibilidad por WhatsApp.</span></p>
         </form>
       </div>
     </section>
