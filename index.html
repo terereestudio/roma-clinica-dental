@@ -173,6 +173,15 @@
     .field input, .field select, .field textarea { border: 1px solid #dfd8d2; background: #fffdfb; color: var(--ink); border-radius: 11px; width: 100%; padding: 12px 13px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
     .field textarea { resize: vertical; min-height: 90px; }
     .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--clay); box-shadow: 0 0 0 3px rgba(178,124,99,.13); }
+    .pref-field { border: 0; padding: 0; margin: 0; min-width: 0; }
+    .pref-field legend { font-size: .82rem; font-weight: 700; padding: 0; margin-bottom: 7px; }
+    .pref-options { display: flex; gap: 10px; }
+    .pref-chip { position: relative; cursor: pointer; }
+    .pref-chip input { position: absolute; opacity: 0; pointer-events: none; }
+    .pref-chip span { display: inline-block; padding: 11px 22px; border: 1px solid #dfd8d2; border-radius: 999px; background: #fffdfb; color: var(--ink); font-size: .9rem; font-weight: 600; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+    .pref-chip:hover span { border-color: var(--clay); }
+    .pref-chip input:checked + span { background: var(--clay); border-color: var(--clay); color: #fff; }
+    .pref-chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(178,124,99,.25); }
     .form-submit { width: 100%; margin-top: 19px; }
     .form-fineprint { color: var(--muted); font-size: .73rem; margin: 12px 0 0; text-align: center; }
     .fineprint-line { display: block; }
@@ -201,13 +210,7 @@
     .footer-brand span { font-size: .78rem; color: #d2c5bc; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
     .footer-links a { color: #f1e6de; text-decoration: none; font-size: .85rem; }
-        .footer-pref { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px; padding-bottom: 18px; }
-    .footer-pref > span { color: #f1e6de; font-size: .85rem; font-weight: 600; }
-    .footer-pref-options { display: flex; gap: 10px; }
-    .footer-pref a { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,249,244,.32); border-radius: 999px; padding: 9px 18px; color: #fff9f4; text-decoration: none; font-size: .85rem; font-weight: 600; transition: background .2s ease, border-color .2s ease; }
-    .footer-pref a:hover { background: rgba(255,249,244,.1); border-color: rgba(255,249,244,.6); }
-    .footer-pref a svg { width: 16px; height: 16px; }
-.footer-bottom { display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 20px; color: #cbbdb3; font-size: .75rem; }
+    .footer-bottom { display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 20px; color: #cbbdb3; font-size: .75rem; }
     .footer-bottom p { margin: 0; }
     .whatsapp-float { position: fixed; z-index: 35; bottom: 22px; right: 20px; min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 13px 19px; color: white; background: #267d53; text-decoration: none; font-size: .85rem; font-weight: 700; box-shadow: 0 8px 25px rgba(24,80,52,.26); transition: transform .2s ease, background .2s ease; }
     .whatsapp-float:hover { transform: translateY(-3px); background: #1f6e48; }
@@ -290,9 +293,7 @@
       .map-card, .map-card iframe { min-height: 350px; }
       .closing-cta { padding: 48px 0; }
       .closing-card { padding: 38px 20px; }
-      .footer-pref { flex-direction: column; align-items: stretch; text-align: center; }
-      .footer-pref-options { justify-content: center; }
-      .footer-top { align-items: flex-start; flex-direction: column; }
+          .footer-top { align-items: flex-start; flex-direction: column; }
       .footer-links { gap: 14px 20px; }
       .footer-bottom { align-items: flex-start; flex-direction: column; }
       .whatsapp-float { width: 56px; height: 56px; min-height: 0; padding: 0; right: 14px; bottom: 14px; }
@@ -474,7 +475,7 @@
           <div class="form-grid">
             <div class="field"><label for="patientName">Tu nombre *</label><input id="patientName" name="patientName" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" required></div>
             <div class="field"><label for="serviceSelect">Servicio *</label><select id="serviceSelect" name="service" required><option value="" selected disabled>Elegí una opción</option><option>Odontología general</option><option>Odontopediatría</option><option>Ortodoncia</option><option>Contenciones</option><option>Endodoncia / tratamiento de conducto</option><option>Limpieza dental</option><option>Blanqueamiento / estética dental</option><option>Otro / no estoy seguro</option></select></div>
-            <div class="field"><label for="preferredDay">Día u horario preferido</label><input id="preferredDay" name="preferredDay" type="text" placeholder="Ej. martes por la tarde"></div>
+            <fieldset class="field pref-field"><legend>Horario preferido</legend><div class="pref-options"><label class="pref-chip"><input type="radio" name="preferredDay" value="Mañana"><span>Mañana</span></label><label class="pref-chip"><input type="radio" name="preferredDay" value="Tarde"><span>Tarde</span></label></div></fieldset>
             <div class="field"><label for="contactPreference">¿Es tu primera consulta?</label><select id="contactPreference" name="contactPreference"><option value="No lo indiqué">Prefiero no indicarlo</option><option>Sí, es mi primera consulta</option><option>No, ya me atendí en ROMA</option></select></div>
             <div class="field full"><label for="details">Comentario (opcional)</label><textarea id="details" name="details" placeholder="Contanos brevemente en qué podemos ayudarte"></textarea></div>
           </div>
@@ -510,13 +511,6 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-pref">
-        <span>Horario preferido para tu turno:</span>
-        <div class="footer-pref-options">
-          <a href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20coordinar%20un%20turno%20por%20la%20ma%C3%B1ana." target="_blank" rel="noopener"><svg><use href="#i-clock"/></svg> Mañana</a>
-          <a href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20coordinar%20un%20turno%20por%20la%20tarde." target="_blank" rel="noopener"><svg><use href="#i-clock"/></svg> Tarde</a>
-        </div>
-      </div>
       <div class="footer-bottom"><p>© <span id="year"></span> ROMA Clínica Dental. Todos los derechos reservados.</p></div>
     </div>
   </footer>
