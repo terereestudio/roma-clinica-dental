@@ -97,7 +97,7 @@
     .tooth-layer { position: absolute; inset: 0; transform: translateZ(var(--z)); }
     .tooth-stage:hover .tooth-3d { animation-play-state: paused; }
     @keyframes tooth-spin { from { transform: rotateX(6deg) rotateY(0deg); } to { transform: rotateX(6deg) rotateY(360deg); } }
-    .orbit { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+    .orbit { position: absolute; inset: 0; pointer-events: none; }
     .orbit-card { position: absolute; left: 50%; top: 50%; transition: none; will-change: transform; pointer-events: auto; max-width: 230px; }
     @media (prefers-reduced-motion: reduce) { .tooth-3d { animation: none; } }
     .float-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: 12px; max-width: 210px; padding: 14px 16px; border-radius: 15px; background: white; box-shadow: 0 12px 30px rgba(80,56,43,.12); }
@@ -192,7 +192,7 @@
     .closing-card { text-align: center; padding: 48px 25px; border-radius: var(--radius-lg); background: var(--paper); border: 1px solid var(--line); }
     .closing-card h2 { max-width: 650px; margin: 12px auto 13px; }
     .closing-card p { max-width: 590px; margin: 0 auto 24px; color: var(--muted); }
-    .site-footer { background: var(--ink); color: #fff9f4; padding: 36px 0 22px; }
+    .site-footer { background: var(--ink); color: #fff9f4; padding: 0 0 22px; border-top: 1px solid rgba(178,124,99,.7); }
     .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,249,244,.16); }
     .footer-brand { display: flex; align-items: center; gap: 14px; }
     .footer-brand img { width: 62px; height: 62px; object-fit: contain; background: var(--sand); border-radius: 50%; }
@@ -200,7 +200,7 @@
     .footer-brand span { font-size: .78rem; color: #d2c5bc; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
     .footer-links a { color: #f1e6de; text-decoration: none; font-size: .85rem; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; color: #cbbdb3; font-size: .75rem; }
+    .footer-bottom { display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 20px; color: #cbbdb3; font-size: .75rem; }
     .footer-bottom p { margin: 0; }
     .whatsapp-float { position: fixed; z-index: 35; bottom: 22px; right: 20px; min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 13px 19px; color: white; background: #267d53; text-decoration: none; font-size: .85rem; font-weight: 700; box-shadow: 0 8px 25px rgba(24,80,52,.26); transition: transform .2s ease, background .2s ease; }
     .whatsapp-float:hover { transform: translateY(-3px); background: #1f6e48; }
@@ -223,8 +223,8 @@
       .topbar-inner { min-height: 34px; gap: 0; }
       .topbar-item:nth-child(2) { display: none; }
       .nav-wrap { height: 72px; }
-      .brand { min-width: 0; width: 124px; }
-      .brand img { width: 124px; height: 78px; }
+      .brand { min-width: 0; width: 100px; }
+      .brand img { width: 100px; height: 62px; }
       .brand-copy strong { font-size: .9rem; }
       .brand-copy span { font-size: .58rem; }
       .menu-toggle { display: inline-flex; flex-shrink: 0; }
@@ -250,6 +250,7 @@
       .float-icon svg { width: 17px; height: 17px; }
       .float-top { top: 13%; right: -1%; }
       .float-bottom { bottom: 8%; left: -1%; }
+      .trust-strip { display: none; }
       .trust-grid { grid-template-columns: 1fr; padding: 12px 0; gap: 0; }
       .trust-item { justify-content: flex-start; padding: 12px 7px; }
       .trust-item + .trust-item { border-left: 0; border-top: 1px solid var(--line); }
@@ -257,7 +258,7 @@
       .section-head { margin-bottom: 27px; }
       .service-grid { grid-auto-columns: 84%; gap: 12px; padding: 6px 2px 12px; margin: -6px -2px -12px; }
       .car-btn { display: none; }
-      .car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+      .car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 26px; }
       .car-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #d8ccc4; cursor: pointer; transition: background .2s ease, transform .2s ease; }
       .car-dots button[aria-current="true"] { background: var(--clay); transform: scale(1.2); }
       .service-card { min-height: 0; padding: 22px; display: grid; grid-template-columns: 52px 1fr; column-gap: 15px; align-items: start; }
@@ -345,12 +346,6 @@
     <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   </svg>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <a class="topbar-item" href="https://www.google.com/maps/dir/?api=1&destination=Roma%20Cl%C3%ADnica%20Dental%2C%20Dr.%20Ram%C3%B3n%20Carrillo%20797%2C%20Corrientes%2C%20Argentina" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Dr. Carrillo 797 · Planta baja</a>
-      <span class="topbar-item"><svg><use href="#i-clock"/></svg> Lun. a vie. · 9 a 12 y 16 a 20:30 h</span>
-    </div>
-  </div>
 
   <header class="site-header">
     <div class="container nav-wrap">
@@ -383,7 +378,7 @@
         </div>
         <div class="hero-visual" aria-label="Ilustración dental decorativa">
           <div class="hero-blob"></div><div class="hero-orbit"></div>
-          <div class="tooth-stage" aria-hidden="true"><div class="tooth-3d"><div class="tooth-layer" style="--z:-8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:0.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/><path d="M75 116c14 10 28 13 45 13s33-4 46-13" fill="none" stroke="#e4c8ba" stroke-width="2.8" stroke-linecap="round"/><path d="M94 158c9 8 21 11 32 9" fill="none" stroke="#d9b19b" stroke-width="2.8" stroke-linecap="round"/></svg></div></div></div>
+          <div class="tooth-stage" aria-hidden="true"><div class="tooth-3d"><div class="tooth-layer" style="--z:-8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:-1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:0.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:1.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:2.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:3.6px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:4.8px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:6.0px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:7.2px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#e7cdbf" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="tooth-layer" style="--z:8.4px"><svg viewBox="0 0 240 270" aria-hidden="true"><path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="#fffdfb" stroke="#b27c63" stroke-width="3" stroke-linejoin="round"/><path d="M75 116c14 10 28 13 45 13s33-4 46-13" fill="none" stroke="#e4c8ba" stroke-width="2.8" stroke-linecap="round"/><path d="M94 158c9 8 21 11 32 9" fill="none" stroke="#d9b19b" stroke-width="2.8" stroke-linecap="round"/></svg></div></div></div>
           <div class="orbit" id="orbit" aria-hidden="true"><div class="float-card orbit-card"><span class="float-icon"><svg><use href="#i-users"/></svg></span><span><strong>Niños y adultos</strong><small>Atención para cada etapa</small></span></div><div class="float-card orbit-card"><span class="float-icon"><svg><use href="#i-shield"/></svg></span><span><strong>Cuidado cercano</strong><small>Tu salud bucal, primero</small></span></div><div class="float-card orbit-card"><span class="float-icon"><svg><use href="#i-tooth"/></svg></span><span><strong>Distintas especialidades</strong><small>Consultá por tu tratamiento</small></span></div><div class="float-card orbit-card"><span class="float-icon"><svg><use href="#i-calendar"/></svg></span><span><strong>Turnos por WhatsApp</strong><small>Rápido y directo con la clínica</small></span></div></div>
         </div>
       </div>
@@ -441,7 +436,7 @@
         <div class="section-head">
           <span class="eyebrow">Nuestro equipo</span>
           <h2>Personas que te acompañan a sonreír.</h2>
-          <p>Un equipo de profesionales para acompañar el cuidado de tu salud bucal en cada consulta.</p>
+          <p>Un equipo que te acompaña con atención cercana y orientación profesional para cuidar la salud bucal.</p>
         </div>
         <div class="team-grid">
           <article class="team-card"><img class="team-photo" src="assets/team-noelia-castillo.webp" alt="Representación ilustrada de Od. Noelia Castillo con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Noelia Castillo</h3><p>Equipo odontológico</p></article>
@@ -449,7 +444,6 @@
           <article class="team-card"><img class="team-photo" src="assets/team-andrea-maidana.webp" alt="Representación ilustrada de Od. Andrea Maidana con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Andrea Maidana</h3><p>Equipo odontológico</p></article>
           <article class="team-card"><img class="team-photo" src="assets/team-romina-rey.webp" alt="Representación ilustrada de Od. Romina Rey con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Romina Rey</h3><p>Equipo odontológico</p></article>
         </div>
-        <p class="team-note"><svg><use href="#i-sparkle"/></svg><span>Un equipo que te acompaña con atención cercana y orientación profesional para cuidar tu salud bucal.</span></p>
       </div>
     </section>
 
@@ -503,25 +497,11 @@
       </div>
     </section>
 
-    <section class="closing-cta">
-      <div class="container">
-        <div class="closing-card">
-          <span class="eyebrow">ROMA Clínica Dental</span>
-          <h2>Una sonrisa cuidada empieza con una consulta.</h2>
-          <p>Escribinos por WhatsApp para consultar por un tratamiento o coordinar tu próximo turno.</p>
-          <a class="btn btn-primary" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20reservar%20un%20turno." target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg> Quiero reservar mi turno</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
-        <a class="footer-brand" href="#inicio" style="text-decoration:none"><img src="assets/logo-roma.png" alt="Logo ROMA Clínica Dental" width="110" height="72"><span><strong>ROMA CLÍNICA DENTAL</strong><span>Atención para niños y adultos · Corrientes</span></span></a>
-        <div class="footer-links"><a href="#servicios">Servicios</a><a href="#equipo">Nuestro equipo</a><a href="#turnos">Turnos</a><a href="#ubicacion">Ubicación</a><a href="https://www.instagram.com/roma.clinica.dental/" target="_blank" rel="noopener">Instagram</a></div>
-      </div>
-      <div class="footer-bottom"><p>© <span id="year"></span> ROMA Clínica Dental. Todos los derechos reservados.</p><p>Dr. Carrillo 797, planta baja · Corrientes Capital, Argentina</p></div>
+      <div class="footer-bottom"><p>© <span id="year"></span> ROMA Clínica Dental. Todos los derechos reservados.</p></div>
     </div>
   </footer>
 
