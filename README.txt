@@ -2,7 +2,7 @@ ROMA CLÍNICA DENTAL — Landing page institucional
 
 Contenido
 - index.html: landing page responsive (mobile-first), con navegación, servicios, equipo, formulario a WhatsApp, datos de contacto, horarios y mapa incrustado.
-- assets/logo-roma.jpg: logo facilitado por el cliente.
+- assets/logo-roma.png: logo facilitado por el cliente.
 - assets/endodoncia-visual.png: ilustración de tratamiento de conductos facilitada por el cliente.
 - assets/team-noelia-castillo.webp, assets/team-emanuel-ortiz.webp, assets/team-andrea-maidana.webp y assets/team-romina-rey.webp: imágenes suministradas para la sección del equipo, optimizadas para la web.
 
