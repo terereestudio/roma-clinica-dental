@@ -108,7 +108,18 @@
     .trust-item strong { display: block; font-size: .89rem; }
     .trust-item span { display: block; color: var(--muted); font-size: .75rem; }
     .services-section { background: var(--paper); }
-    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .carousel-wrap { position: relative; }
+    .service-grid { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 8px 4px 16px; margin: -8px -4px -16px; outline: none; }
+    .service-grid::-webkit-scrollbar { display: none; }
+    .service-grid:focus-visible { box-shadow: 0 0 0 3px rgba(178,124,99,.25); border-radius: var(--radius-md); }
+    .service-card { scroll-snap-align: start; }
+    .car-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); display: grid; place-items: center; cursor: pointer; color: var(--ink); transition: background .2s ease, opacity .2s ease; }
+    .car-btn:hover { background: var(--blush); }
+    .car-btn:disabled { opacity: .35; cursor: default; }
+    .car-btn svg { width: 20px; height: 20px; }
+    .car-prev { left: -20px; }
+    .car-next { right: -20px; }
+    .car-dots { display: none; }
     .service-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; min-height: 250px; padding: 27px; background: white; border: 1px solid var(--line); border-radius: var(--radius-md); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
     .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(178,124,99,.42); }
     .service-icon { width: 51px; height: 51px; display: grid; place-items: center; background: var(--blush); color: var(--clay-dark); border-radius: 16px; margin-bottom: 21px; }
@@ -197,7 +208,7 @@
       .hero-visual { min-height: 390px; }
       .float-top { right: 0; }
       .float-bottom { left: 0; }
-      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .service-grid { grid-auto-columns: calc((100% - 18px) / 2); }
       .team-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 740px) {
@@ -237,7 +248,11 @@
       .trust-item + .trust-item { border-left: 0; border-top: 1px solid var(--line); }
       .section { padding: 64px 0; }
       .section-head { margin-bottom: 27px; }
-      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-grid { grid-auto-columns: 84%; gap: 12px; padding: 6px 2px 12px; margin: -6px -2px -12px; }
+      .car-btn { display: none; }
+      .car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+      .car-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #d8ccc4; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+      .car-dots button[aria-current="true"] { background: var(--clay); transform: scale(1.2); }
       .service-card { min-height: 0; padding: 22px; display: grid; grid-template-columns: 52px 1fr; column-gap: 15px; align-items: start; }
       .service-icon { grid-row: span 3; margin-bottom: 0; }
       .service-card h3 { margin: 2px 0 7px; }
@@ -392,13 +407,18 @@
           <h2>Todo empieza con el cuidado de tu salud bucal.</h2>
           <p>Te acompañamos con atención odontológica y tratamientos adaptados a tus necesidades. Escribinos para consultar qué opción es adecuada para vos.</p>
         </div>
-        <div class="service-grid">
+        <div class="carousel-wrap">
+          <button class="car-btn car-prev" type="button" id="servicePrev" aria-label="Ver servicio anterior" aria-controls="serviceTrack"><svg><use href="#i-arrow"/></svg></button>
+          <div class="service-grid" id="serviceTrack" role="region" aria-roledescription="carrusel" aria-label="Servicios de la clínica" tabindex="0">
           <article class="service-card"><span class="service-icon"><svg><use href="#i-tooth"/></svg></span><h3>Odontología general</h3><p>Controles, prevención y atención integral para mantener tu boca saludable.</p><a class="text-link service-cta" data-service="Odontología general" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Odontolog%C3%ADa%20general." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
           <article class="service-card"><span class="service-icon"><svg><use href="#i-users"/></svg></span><h3>Odontopediatría</h3><p>Cuidado dental para los más chicos, con un enfoque atento a cada etapa.</p><a class="text-link service-cta" data-service="Odontopediatría" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Odontopediatr%C3%ADa." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
           <article class="service-card"><span class="service-icon"><svg><use href="#i-braces"/></svg></span><h3>Ortodoncia y contenciones</h3><p>Opciones para alinear la sonrisa y acompañar su mantenimiento después del tratamiento.</p><a class="text-link service-cta" data-service="Ortodoncia y contenciones" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Ortodoncia%20y%20contenciones." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
           <article class="service-card"><span class="service-icon"><svg><use href="#i-tooth"/></svg></span><h3>Endodoncia</h3><p>Tratamientos de conducto orientados a tratar el interior del diente y preservar la pieza cuando sea posible.</p><a class="text-link service-cta" data-service="Endodoncia / tratamiento de conducto" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Endodoncia." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
           <article class="service-card"><span class="service-icon"><svg><use href="#i-sparkle"/></svg></span><h3>Limpieza y estética dental</h3><p>Limpieza dental y consultas por blanqueamiento y otros tratamientos estéticos.</p><a class="text-link service-cta" data-service="Limpieza y estética dental" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Limpieza%20y%20est%C3%A9tica%20dental." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          </div>
+          <button class="car-btn car-next" type="button" id="serviceNext" aria-label="Ver servicio siguiente" aria-controls="serviceTrack"><svg><use href="#i-arrow"/></svg></button>
         </div>
+        <div class="car-dots" id="serviceDots" aria-hidden="false"></div>
       </div>
     </section>
 
@@ -542,6 +562,40 @@
           window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
         });
       });
+
+
+      const track = document.getElementById('serviceTrack');
+      const prevBtn = document.getElementById('servicePrev');
+      const nextBtn = document.getElementById('serviceNext');
+      const dotsBox = document.getElementById('serviceDots');
+      if (track) {
+        const cards = Array.prototype.slice.call(track.children);
+        const stepOf = function () { return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; };
+        const current = function () {
+          const step = stepOf();
+          return Math.min(cards.length - 1, Math.max(0, Math.round(track.scrollLeft / step)));
+        };
+        const dots = cards.map(function (_, i) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Ir al servicio ' + (i + 1));
+          b.addEventListener('click', function () { track.scrollTo({ left: i * stepOf(), behavior: 'smooth' }); });
+          dotsBox.appendChild(b);
+          return b;
+        });
+        const update = function () {
+          const max = track.scrollWidth - track.clientWidth - 2;
+          const idx = track.scrollLeft >= max ? cards.length - 1 : current();
+          dots.forEach(function (d, i) { d.setAttribute('aria-current', i === idx ? 'true' : 'false'); });
+          prevBtn.disabled = track.scrollLeft <= 2;
+          nextBtn.disabled = track.scrollLeft >= max;
+        };
+        prevBtn.addEventListener('click', function () { track.scrollBy({ left: -stepOf(), behavior: 'smooth' }); });
+        nextBtn.addEventListener('click', function () { track.scrollBy({ left: stepOf(), behavior: 'smooth' }); });
+        track.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      }
 
       bookingForm.addEventListener('submit', function (event) {
         event.preventDefault();
