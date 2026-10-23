@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e1d5bf">
+  <title>ROMA Clínica Dental | Odontología en Corrientes Capital</title>
+  <meta name="description" content="En ROMA Clínica Dental cuidamos sonrisas de niños y adultos en Corrientes Capital. Odontología general, odontopediatría, ortodoncia, endodoncia y más. Reservá tu turno por WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ROMA Clínica Dental | Tu sonrisa, en buenas manos">
+  <meta property="og:description" content="Atención odontológica para niños y adultos en Corrientes Capital. Consultá y reservá tu turno por WhatsApp.">
+  <meta property="og:image" content="assets/logo-roma.png">
+  <link rel="icon" type="image/jpeg" href="assets/logo-roma.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #e1d5bf;
+      --sand-dark: #cbb99b;
+      --blush: #f7eeea;
+      --blush-deep: #efded6;
+      --clay: #b27c63;
+      --clay-dark: #93614d;
+      --ink: #282522;
+      --muted: #746c66;
+      --paper: #fffdfb;
+      --line: rgba(83, 61, 48, .14);
+      --shadow: 0 18px 50px rgba(93, 68, 54, .09);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--clay-dark); text-transform: uppercase; letter-spacing: .15em; font-size: .72rem; font-weight: 700; }
+    .eyebrow::before { content: ''; width: 23px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: -.035em; }
+    h1 { font-size: clamp(2.7rem, 8vw, 5.4rem); line-height: 1.02; margin: 19px 0 22px; max-width: 750px; }
+    h1 em { color: var(--clay); font-weight: 500; }
+    h2 { font-size: clamp(2.05rem, 5vw, 3.35rem); line-height: 1.12; margin-bottom: 16px; }
+    h3 { line-height: 1.25; }
+    .lead { max-width: 580px; font-size: clamp(1rem, 2vw, 1.12rem); color: var(--muted); }
+    .section { padding: 84px 0; }
+    .section-head { max-width: 720px; margin-bottom: 35px; }
+    .section-head p { color: var(--muted); max-width: 610px; margin-bottom: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 999px; padding: 14px 22px; text-decoration: none; font-weight: 700; font-size: .93rem; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: white; background: var(--clay); box-shadow: 0 9px 22px rgba(178, 124, 99, .22); }
+    .btn-primary:hover { background: var(--clay-dark); }
+    .btn-secondary { color: var(--ink); border-color: rgba(40,37,34,.22); background: rgba(255,255,255,.5); }
+    .btn-secondary:hover { background: white; }
+    .btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .topbar { background: var(--ink); color: #fffaf5; font-size: .77rem; }
+    .topbar-inner { min-height: 35px; display: flex; align-items: center; justify-content: center; gap: 22px; text-align: center; }
+    .topbar a { text-decoration: none; }
+    .topbar-item { display: inline-flex; align-items: center; gap: 7px; }
+    .topbar svg { width: 14px; height: 14px; color: #dfb29b; }
+    .site-header { position: sticky; top: 0; z-index: 30; background: rgba(255,253,251,.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(83,61,48,.09); }
+    .nav-wrap { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; min-width: 0; width: 150px; text-decoration: none; }
+    .brand img { display:block; width: 150px; height: 88px; object-fit: contain; }
+    .brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-copy strong { font-size: 1rem; letter-spacing: .13em; }
+    .brand-copy span { font-size: .66rem; color: var(--muted); letter-spacing: .09em; text-transform: uppercase; margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.3vw, 30px); }
+    .nav-links a { text-decoration: none; font-size: .88rem; font-weight: 600; color: #514842; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--clay-dark); }
+    .nav-links .nav-cta { background: var(--clay); color: white; padding: 12px 18px; border-radius: 999px; }
+    .nav-links .nav-cta:hover { background: var(--clay-dark); color: white; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; border-radius: 50%; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+    .menu-toggle svg { width: 22px; height: 22px; }
+    .hero { position: relative; overflow: hidden; background: var(--blush); }
+    .hero::before { content: ''; position: absolute; width: 580px; height: 580px; border-radius: 50%; right: -210px; top: -270px; background: rgba(225,213,191,.55); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(360px, .94fr); gap: clamp(30px, 5vw, 72px); align-items: center; padding-top: 64px; padding-bottom: 75px; }
+    .hero-copy { padding: 18px 0; }
+    .hero-copy .lead { margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { margin-top: 24px; display: flex; align-items: center; gap: 10px; color: #6e625a; font-size: .84rem; }
+    .hero-note svg { color: var(--clay); width: 19px; height: 19px; }
+    .hero-visual { position: relative; min-height: 470px; display: grid; place-items: center; }
+    .hero-blob { position: absolute; width: min(100%, 475px); aspect-ratio: 1 / 1.04; background: var(--sand); border-radius: 46% 54% 53% 47% / 43% 39% 61% 57%; transform: rotate(-4deg); }
+    .hero-orbit { position: absolute; width: 86%; aspect-ratio: 1; border: 1px solid rgba(146,97,77,.27); border-radius: 50%; }
+    .tooth-card { position: relative; z-index: 2; width: min(78%, 330px); aspect-ratio: 1 / 1.1; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, #fffdfb 0%, #f6e9e1 100%); border-radius: 47% 53% 40% 60% / 50% 43% 57% 50%; box-shadow: var(--shadow); border: 8px solid rgba(255,253,251,.55); }
+    .tooth-card svg { width: 66%; max-width: 240px; height: auto; overflow: visible; }
+    .tooth-shine { position: absolute; background: white; border-radius: 50%; opacity: .8; }
+    .shine-one { width: 12px; height: 12px; right: 25%; top: 23%; }
+    .shine-two { width: 7px; height: 7px; left: 22%; bottom: 31%; }
+    .float-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: 12px; max-width: 210px; padding: 14px 16px; border-radius: 15px; background: white; box-shadow: 0 12px 30px rgba(80,56,43,.12); }
+    .float-card strong { display: block; font-size: .85rem; line-height: 1.2; }
+    .float-card small { display: block; color: var(--muted); font-size: .73rem; margin-top: 3px; }
+    .float-icon { width: 38px; height: 38px; display: grid; place-items: center; background: var(--blush); border-radius: 12px; flex-shrink: 0; color: var(--clay-dark); }
+    .float-icon svg { width: 20px; height: 20px; }
+    .float-top { top: 19%; right: -1%; }
+    .float-bottom { bottom: 13%; left: -3%; }
+    .trust-strip { background: white; border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); padding: 23px 0; gap: 18px; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: left; }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-icon { color: var(--clay); width: 25px; height: 25px; flex-shrink: 0; }
+    .trust-item strong { display: block; font-size: .89rem; }
+    .trust-item span { display: block; color: var(--muted); font-size: .75rem; }
+    .services-section { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .service-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; min-height: 250px; padding: 27px; background: white; border: 1px solid var(--line); border-radius: var(--radius-md); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(178,124,99,.42); }
+    .service-icon { width: 51px; height: 51px; display: grid; place-items: center; background: var(--blush); color: var(--clay-dark); border-radius: 16px; margin-bottom: 21px; }
+    .service-icon svg { width: 25px; height: 25px; }
+    .service-card h3 { font-size: 1.11rem; margin-bottom: 9px; }
+    .service-card p { color: var(--muted); font-size: .89rem; margin-bottom: 19px; }
+    .text-link { margin-top: auto; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: var(--clay-dark); font-size: .86rem; font-weight: 700; }
+    .text-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
+    .text-link:hover svg { transform: translateX(4px); }
+    .featured-service { background: var(--blush); padding: 72px 0; overflow: hidden; }
+    .featured-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: clamp(32px, 6vw, 85px); }
+    .endo-image-wrap { position: relative; padding: 18px; border: 1px solid rgba(178,124,99,.38); border-radius: 44% 56% 48% 52% / 44% 40% 60% 56%; background: rgba(255,255,255,.53); }
+    .endo-image-wrap::before { content: ''; position: absolute; inset: 7%; border: 1px solid rgba(178,124,99,.22); border-radius: inherit; pointer-events: none; }
+    .endo-image-wrap img { position: relative; z-index: 1; width: 100%; border-radius: 43% 57% 47% 53% / 44% 39% 61% 56%; aspect-ratio: 1 / 1; object-fit: cover; }
+    .endo-copy p { color: var(--muted); }
+    .benefit-list { padding: 0; margin: 25px 0 30px; list-style: none; display: grid; gap: 14px; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 11px; font-size: .93rem; }
+    .benefit-list svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--clay); margin-top: 2px; }
+    .team-section { background: #fff; }
+    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .team-card { text-align: center; padding: 18px 16px 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fffdfb; }
+    .team-photo { width: min(100%, 174px); aspect-ratio: 1 / 1; height: auto; object-fit: cover; object-position: center; margin: 0 auto 17px; border: 4px solid var(--blush); border-radius: 46% 46% 19px 19px; background: var(--blush); box-shadow: 0 8px 22px rgba(93,68,54,.10); }
+    .team-card { transition: transform .22s ease, box-shadow .22s ease; }
+    .team-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(93,68,54,.08); }
+    .team-card h3 { font-size: 1rem; margin-bottom: 4px; }
+    .team-card p { font-size: .81rem; color: var(--muted); margin-bottom: 0; }
+    .team-note { display: flex; align-items: flex-start; gap: 9px; max-width: 780px; margin-top: 20px; color: var(--muted); font-size: .79rem; }
+    .team-note svg { width: 17px; height: 17px; color: var(--clay); flex-shrink: 0; margin-top: 2px; }
+    .appointment-section { background: var(--sand); position: relative; overflow: hidden; }
+    .appointment-section::after { content: ''; position: absolute; width: 400px; height: 400px; right: -160px; bottom: -220px; border: 1px solid rgba(146,97,77,.23); border-radius: 50%; }
+    .appointment-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px,6vw,78px); align-items: start; }
+    .appointment-copy { padding-top: 10px; }
+    .appointment-copy p { color: #5f554c; }
+    .appointment-points { margin: 27px 0 0; padding: 0; list-style: none; display: grid; gap: 13px; }
+    .appointment-points li { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; }
+    .appointment-points svg { width: 19px; height: 19px; color: var(--clay-dark); flex-shrink: 0; margin-top: 3px; }
+    .booking-card { background: white; border: 1px solid rgba(83,61,48,.12); box-shadow: 0 22px 60px rgba(93,68,54,.12); border-radius: var(--radius-lg); padding: clamp(22px,4vw,36px); }
+    .booking-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.65rem; letter-spacing: -.02em; margin-bottom: 6px; }
+    .booking-card > p { font-size: .86rem; color: var(--muted); margin-bottom: 23px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1/-1; }
+    .field label { font-size: .82rem; font-weight: 700; }
+    .field input, .field select, .field textarea { border: 1px solid #dfd8d2; background: #fffdfb; color: var(--ink); border-radius: 11px; width: 100%; padding: 12px 13px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+    .field textarea { resize: vertical; min-height: 90px; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--clay); box-shadow: 0 0 0 3px rgba(178,124,99,.13); }
+    .form-submit { width: 100%; margin-top: 19px; }
+    .form-fineprint { color: var(--muted); font-size: .73rem; margin: 12px 0 0; text-align: center; }
+    .location-section { background: var(--paper); }
+    .location-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; align-items: stretch; }
+    .location-copy { padding: 16px 0; }
+    .location-copy .lead { margin-bottom: 25px; }
+    .info-row { display: flex; gap: 14px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .info-row:last-of-type { border-bottom: 0; }
+    .info-icon { width: 43px; height: 43px; flex-shrink: 0; display: grid; place-items: center; background: var(--blush); color: var(--clay-dark); border-radius: 13px; }
+    .info-icon svg { width: 21px; height: 21px; }
+    .info-row strong { display: block; font-size: .9rem; margin-bottom: 3px; }
+    .info-row span, .info-row a { color: var(--muted); font-size: .86rem; text-decoration: none; }
+    .location-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .map-card { overflow: hidden; min-height: 420px; border-radius: var(--radius-lg); background: var(--blush); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .map-card iframe { width: 100%; height: 100%; min-height: 420px; display: block; border: 0; }
+    .closing-cta { padding: 65px 0; background: var(--blush); }
+    .closing-card { text-align: center; padding: 48px 25px; border-radius: var(--radius-lg); background: var(--paper); border: 1px solid var(--line); }
+    .closing-card h2 { max-width: 650px; margin: 12px auto 13px; }
+    .closing-card p { max-width: 590px; margin: 0 auto 24px; color: var(--muted); }
+    .site-footer { background: var(--ink); color: #fff9f4; padding: 36px 0 22px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,249,244,.16); }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-brand img { width: 62px; height: 62px; object-fit: contain; background: var(--sand); border-radius: 50%; }
+    .footer-brand strong { display: block; letter-spacing: .12em; }
+    .footer-brand span { font-size: .78rem; color: #d2c5bc; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .footer-links a { color: #f1e6de; text-decoration: none; font-size: .85rem; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; color: #cbbdb3; font-size: .75rem; }
+    .footer-bottom p { margin: 0; }
+    .whatsapp-float { position: fixed; z-index: 35; bottom: 22px; right: 20px; min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 13px 19px; color: white; background: #267d53; text-decoration: none; font-size: .85rem; font-weight: 700; box-shadow: 0 8px 25px rgba(24,80,52,.26); transition: transform .2s ease, background .2s ease; }
+    .whatsapp-float:hover { transform: translateY(-3px); background: #1f6e48; }
+    .whatsapp-float svg { width: 21px; height: 21px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 980px) {
+      .nav-wrap { height: 78px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: .81rem; }
+      .brand img { width: 58px; height: 58px; }
+      .hero-grid { grid-template-columns: minmax(0,1.02fr) minmax(300px,.98fr); gap: 20px; }
+      .hero-visual { min-height: 390px; }
+      .float-top { right: 0; }
+      .float-bottom { left: 0; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 740px) {
+      .container { width: min(var(--max), calc(100% - 32px)); }
+      .topbar-inner { min-height: 34px; gap: 0; }
+      .topbar-item:nth-child(2) { display: none; }
+      .nav-wrap { height: 72px; }
+      .brand { min-width: 0; width: 124px; }
+      .brand img { width: 124px; height: 78px; }
+      .brand-copy strong { font-size: .9rem; }
+      .brand-copy span { font-size: .58rem; }
+      .menu-toggle { display: inline-flex; flex-shrink: 0; }
+      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 71px; padding: 15px 20px 22px; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 15px 25px rgba(40,37,34,.08); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 5px; font-size: .95rem; }
+      .nav-links .nav-cta { text-align: center; margin-top: 8px; padding: 13px; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 44px; padding-bottom: 37px; gap: 5px; }
+      .hero-copy { padding: 0; }
+      h1 { font-size: clamp(2.75rem, 13vw, 4.3rem); margin: 14px 0 18px; }
+      .hero-copy .lead { font-size: 1rem; margin-bottom: 23px; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-note { margin-top: 18px; font-size: .79rem; }
+      .hero-visual { min-height: 320px; margin: 0 -5px; }
+      .hero-blob { width: min(78%, 340px); }
+      .hero-orbit { width: min(83%, 345px); }
+      .tooth-card { width: min(62%, 245px); border-width: 6px; }
+      .float-card { padding: 10px 12px; max-width: 178px; gap: 9px; }
+      .float-card strong { font-size: .77rem; }
+      .float-card small { font-size: .66rem; }
+      .float-icon { width: 32px; height: 32px; border-radius: 10px; }
+      .float-icon svg { width: 17px; height: 17px; }
+      .float-top { top: 13%; right: -1%; }
+      .float-bottom { bottom: 8%; left: -1%; }
+      .trust-grid { grid-template-columns: 1fr; padding: 12px 0; gap: 0; }
+      .trust-item { justify-content: flex-start; padding: 12px 7px; }
+      .trust-item + .trust-item { border-left: 0; border-top: 1px solid var(--line); }
+      .section { padding: 64px 0; }
+      .section-head { margin-bottom: 27px; }
+      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 22px; display: grid; grid-template-columns: 52px 1fr; column-gap: 15px; align-items: start; }
+      .service-icon { grid-row: span 3; margin-bottom: 0; }
+      .service-card h3 { margin: 2px 0 7px; }
+      .service-card p { margin-bottom: 12px; }
+      .text-link { grid-column: 2; }
+      .featured-service { padding: 57px 0; }
+      .featured-grid { grid-template-columns: 1fr; gap: 32px; }
+      .endo-image-wrap { width: min(88%, 360px); margin-inline: auto; }
+      .team-grid { grid-template-columns: repeat(2,1fr); gap: 11px; }
+      .team-card { padding: 16px 8px 19px; }
+      .team-photo { width: min(100%, 126px); }
+      .team-card h3 { font-size: .93rem; }
+      .team-card p { font-size: .75rem; }
+      .appointment-grid { grid-template-columns: 1fr; gap: 28px; }
+      .booking-card { padding: 24px 18px; }
+      .form-grid { grid-template-columns: 1fr; gap: 13px; }
+      .field.full { grid-column: auto; }
+      .location-grid { grid-template-columns: 1fr; gap: 22px; }
+      .location-copy { padding-top: 0; }
+      .map-card, .map-card iframe { min-height: 350px; }
+      .closing-cta { padding: 48px 0; }
+      .closing-card { padding: 38px 20px; }
+      .footer-top { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 14px 20px; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; }
+      .whatsapp-float { width: 56px; height: 56px; min-height: 0; padding: 0; right: 14px; bottom: 14px; }
+      .whatsapp-float span { display: none; }
+    }
+    @media (max-width: 360px) {
+      .brand-copy span { display: none; }
+      .hero-visual { min-height: 285px; }
+      .float-card { max-width: 152px; padding: 9px; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "ROMA Clínica Dental",
+    "description": "Atención odontológica para niños y adultos en Corrientes Capital.",
+    "telephone": "+54 379 463-3850",
+    "image": "assets/logo-roma.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dr. Carrillo 797, planta baja",
+      "addressLocality": "Corrientes",
+      "addressRegion": "Corrientes",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -27.475615488781088,
+      "longitude": -58.841967421455124
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"12:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"20:30"}
+    ],
+    "sameAs": ["https://www.instagram.com/roma.clinica.dental/"]
+  }
+  </script>
+</head>
+<body>
+  <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3.5 20l1.2-4.4a8.2 8.2 0 1 1 15.5-3.9Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.4 8.1c.3-.6.6-.6.9-.6h.4c.2 0 .4 0 .5.4l.7 1.7c.1.3.1.5-.1.7l-.6.7c-.2.2-.3.4-.1.7.7 1.2 1.6 2 2.8 2.6.3.1.5.1.7-.1l.8-.9c.2-.2.4-.3.7-.2l1.6.8c.3.1.4.3.4.5 0 .4-.2 1.3-.8 1.8-.5.5-1.3.7-2.1.6-1-.2-2.3-.8-3.6-1.9-1.1-1-2.1-2.4-2.4-3.4-.4-1-.3-2.1.2-2.8Z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM16 3.2a4 4 0 0 1 0 7.6M22 20v-1.5a4 4 0 0 0-3-3.9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7.7 3.3C5.3 2.9 3.5 4.8 3.7 7.5c.2 2.2 1.3 3.6 2 5.6.8 2.3 1.1 7.1 2.5 7.1 1.5 0 1.2-5.7 3.8-5.7s2.3 5.7 3.8 5.7c1.4 0 1.7-4.8 2.5-7.1.7-2 1.8-3.4 2-5.6.2-2.7-1.6-4.6-4-4.2-1.7.3-2.8 1.2-4.3 1.2S9.4 3.6 7.7 3.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-braces" viewBox="0 0 24 24"><path d="M7 3H5a2 2 0 0 0-2 2v2a3 3 0 0 1-2 3 3 3 0 0 1 2 3v2a2 2 0 0 0 2 2h2M17 3h2a2 2 0 0 1 2 2v2a3 3 0 0 0 2 3 3 3 0 0 0-2 3v2a2 2 0 0 1-2 2h-2M7 12h10M9 9v6M15 9v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 2 1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9L12 2ZM19 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.3 4.3L19 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 3v4M8 3v4M3 10h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.8" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-item" href="https://www.google.com/maps/dir/?api=1&destination=Roma%20Cl%C3%ADnica%20Dental%2C%20Dr.%20Ram%C3%B3n%20Carrillo%20797%2C%20Corrientes%2C%20Argentina" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Dr. Carrillo 797 · Planta baja</a>
+      <span class="topbar-item"><svg><use href="#i-clock"/></svg> Lun. a vie. · 9 a 12 y 16 a 20:30 h</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="ROMA Clínica Dental, inicio">
+        <img src="assets/logo-roma.png" alt="Logo de ROMA Clínica Dental" width="150" height="88">
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Nuestro equipo</a>
+        <a href="#turnos">Turnos</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a class="nav-cta" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20consultar%20por%20un%20turno." target="_blank" rel="noopener">Reservar turno <svg width="16" height="16"><use href="#i-arrow"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Tu sonrisa nos importa</span>
+          <h1>Cuidamos tu sonrisa, <em>en cada etapa.</em></h1>
+          <p class="lead">Atención odontológica para niños y adultos, con un trato cercano y un equipo preparado para acompañarte en el cuidado de tu salud bucal.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20reservar%20un%20turno." target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg> Reservar turno por WhatsApp</a>
+            <a class="btn btn-secondary" href="#servicios">Conocer servicios <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hero-note"><svg><use href="#i-check"/></svg> Consultas y turnos de lunes a viernes en Corrientes Capital.</div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustración dental decorativa">
+          <div class="hero-blob"></div><div class="hero-orbit"></div>
+          <div class="tooth-card">
+            <svg viewBox="0 0 240 270" role="img" aria-label="Ilustración de un diente saludable">
+              <defs><linearGradient id="toothFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f2dfd3"/></linearGradient></defs>
+              <path d="M69 31C43 25 26 46 29 75c2 23 14 40 22 62 10 28 15 91 32 91 18 0 17-70 37-70s19 70 37 70c17 0 22-63 32-91 8-22 20-39 22-62 3-29-14-50-40-44-18 4-31 15-51 15S87 35 69 31Z" fill="url(#toothFill)" stroke="#b27c63" stroke-width="3.2" stroke-linejoin="round"/>
+              <path d="M57 57c-8 15-4 33 5 44M181 49c13 4 20 18 17 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+              <path d="M75 116c14 10 28 13 45 13s33-4 46-13" fill="none" stroke="#e4c8ba" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M94 158c9 8 21 11 32 9" fill="none" stroke="#d9b19b" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="m156 79 6 8 13-16" fill="none" stroke="#9b6c55" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="tooth-shine shine-one"></span><span class="tooth-shine shine-two"></span>
+          </div>
+          <div class="float-card float-top"><span class="float-icon"><svg><use href="#i-users"/></svg></span><span><strong>Niños y adultos</strong><small>Atención para cada etapa</small></span></div>
+          <div class="float-card float-bottom"><span class="float-icon"><svg><use href="#i-shield"/></svg></span><span><strong>Cuidado cercano</strong><small>Tu salud bucal, primero</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Información destacada">
+      <div class="container trust-grid">
+        <div class="trust-item"><svg class="trust-icon"><use href="#i-users"/></svg><div><strong>Atención para toda la familia</strong><span>Niños, adolescentes y adultos</span></div></div>
+        <div class="trust-item"><svg class="trust-icon"><use href="#i-tooth"/></svg><div><strong>Distintas especialidades</strong><span>Consultá por tu tratamiento</span></div></div>
+        <div class="trust-item"><svg class="trust-icon"><use href="#i-calendar"/></svg><div><strong>Turnos por WhatsApp</strong><span>Rápido y directo con la clínica</span></div></div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nuestros servicios</span>
+          <h2>Todo empieza con el cuidado de tu salud bucal.</h2>
+          <p>Te acompañamos con atención odontológica y tratamientos adaptados a tus necesidades. Escribinos para consultar qué opción es adecuada para vos.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-tooth"/></svg></span><h3>Odontología general</h3><p>Controles, prevención y atención integral para mantener tu boca saludable.</p><a class="text-link service-cta" data-service="Odontología general" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Odontolog%C3%ADa%20general." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-users"/></svg></span><h3>Odontopediatría</h3><p>Cuidado dental para los más chicos, con un enfoque atento a cada etapa.</p><a class="text-link service-cta" data-service="Odontopediatría" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Odontopediatr%C3%ADa." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-braces"/></svg></span><h3>Ortodoncia y contenciones</h3><p>Opciones para alinear la sonrisa y acompañar su mantenimiento después del tratamiento.</p><a class="text-link service-cta" data-service="Ortodoncia y contenciones" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Ortodoncia%20y%20contenciones." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-tooth"/></svg></span><h3>Endodoncia</h3><p>Tratamientos de conducto orientados a tratar el interior del diente y preservar la pieza cuando sea posible.</p><a class="text-link service-cta" data-service="Endodoncia / tratamiento de conducto" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Endodoncia." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-sparkle"/></svg></span><h3>Limpieza y estética dental</h3><p>Limpieza dental y consultas por blanqueamiento y otros tratamientos estéticos.</p><a class="text-link service-cta" data-service="Limpieza y estética dental" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Limpieza%20y%20est%C3%A9tica%20dental." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+          <article class="service-card"><span class="service-icon"><svg><use href="#i-shield"/></svg></span><h3>Implantes, cirugías y prótesis</h3><p>Consultas sobre alternativas de rehabilitación y tratamientos según evaluación profesional.</p><a class="text-link service-cta" data-service="Implantes, cirugías y prótesis" href="https://wa.me/5493794633850?text=Hola%2C%20quisiera%20consultar%20por%20Implantes%2C%20cirug%C3%ADas%20y%20pr%C3%B3tesis." target="_blank" rel="noopener">Consultar servicio <svg><use href="#i-arrow"/></svg></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-service" aria-labelledby="endo-title">
+      <div class="container featured-grid">
+        <div class="endo-image-wrap"><img src="assets/endodoncia-visual.png" alt="Ilustración clínica de un tratamiento de conducto" loading="lazy" width="364" height="337"></div>
+        <div class="endo-copy">
+          <span class="eyebrow">Tratamientos con acompañamiento</span>
+          <h2 id="endo-title">Cuidar una pieza dental también es cuidar tu sonrisa.</h2>
+          <p>Cuando hay dolor o una infección dental, una evaluación profesional permite conocer las alternativas de tratamiento. En ROMA podés consultar por endodoncia y tratamiento de conductos.</p>
+          <ul class="benefit-list">
+            <li><svg><use href="#i-check"/></svg><span>Evaluación del estado de la pieza dental.</span></li>
+            <li><svg><use href="#i-check"/></svg><span>Orientación sobre el tratamiento indicado para cada caso.</span></li>
+            <li><svg><use href="#i-check"/></svg><span>Seguimiento y cuidados posteriores, según indicación profesional.</span></li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20consultar%20por%20un%20tratamiento%20de%20conducto." target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg> Consultar por endodoncia</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-section" id="equipo">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nuestro equipo</span>
+          <h2>Personas que te acompañan a sonreír.</h2>
+          <p>Un equipo de profesionales para acompañar el cuidado de tu salud bucal en cada consulta.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card"><img class="team-photo" src="assets/team-noelia-castillo.webp" alt="Representación ilustrada de Od. Noelia Castillo con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Noelia Castillo</h3><p>Equipo odontológico</p></article>
+          <article class="team-card"><img class="team-photo" src="assets/team-emanuel-ortiz.webp" alt="Representación ilustrada de Od. Emanuel Ortiz con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Emanuel Ortiz</h3><p>Equipo odontológico</p></article>
+          <article class="team-card"><img class="team-photo" src="assets/team-andrea-maidana.webp" alt="Representación ilustrada de Od. Andrea Maidana con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Andrea Maidana</h3><p>Equipo odontológico</p></article>
+          <article class="team-card"><img class="team-photo" src="assets/team-romina-rey.webp" alt="Representación ilustrada de Od. Romina Rey con uniforme clínico" width="180" height="180" loading="lazy" decoding="async"><h3>Od. Romina Rey</h3><p>Equipo odontológico</p></article>
+        </div>
+        <p class="team-note"><svg><use href="#i-sparkle"/></svg><span>Un equipo que te acompaña con atención cercana y orientación profesional para cuidar tu salud bucal.</span></p>
+      </div>
+    </section>
+
+    <section class="section appointment-section" id="turnos">
+      <div class="container appointment-grid">
+        <div class="appointment-copy">
+          <span class="eyebrow">Reservá tu consulta</span>
+          <h2>Tu próximo turno empieza con un mensaje.</h2>
+          <p>Completá estos datos y se abrirá WhatsApp con tu consulta preparada para enviar a ROMA Clínica Dental. El equipo confirmará la disponibilidad del turno por ese medio.</p>
+          <ul class="appointment-points">
+            <li><svg><use href="#i-check"/></svg><span>Elegí el servicio por el que querés consultar.</span></li>
+            <li><svg><use href="#i-check"/></svg><span>Contanos qué día u horario te resulta conveniente.</span></li>
+            <li><svg><use href="#i-check"/></svg><span>La clínica te responderá para coordinar el turno.</span></li>
+          </ul>
+        </div>
+        <form class="booking-card" id="bookingForm">
+          <h3>Solicitá tu turno</h3>
+          <p>Los campos con * son obligatorios.</p>
+          <div class="form-grid">
+            <div class="field"><label for="patientName">Tu nombre *</label><input id="patientName" name="patientName" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" required></div>
+            <div class="field"><label for="serviceSelect">Servicio *</label><select id="serviceSelect" name="service" required><option value="" selected disabled>Elegí una opción</option><option>Odontología general</option><option>Odontopediatría</option><option>Ortodoncia</option><option>Contenciones</option><option>Endodoncia / tratamiento de conducto</option><option>Limpieza dental</option><option>Blanqueamiento / estética dental</option><option>Implantes</option><option>Cirugías</option><option>Prótesis</option><option>Otro / no estoy seguro</option></select></div>
+            <div class="field"><label for="preferredDay">Día u horario preferido</label><input id="preferredDay" name="preferredDay" type="text" placeholder="Ej. martes por la tarde"></div>
+            <div class="field"><label for="contactPreference">¿Es tu primera consulta?</label><select id="contactPreference" name="contactPreference"><option value="No lo indiqué">Prefiero no indicarlo</option><option>Sí, es mi primera consulta</option><option>No, ya me atendí en ROMA</option></select></div>
+            <div class="field full"><label for="details">Comentario (opcional)</label><textarea id="details" name="details" placeholder="Contanos brevemente en qué podemos ayudarte"></textarea></div>
+          </div>
+          <button class="btn btn-primary form-submit" type="submit"><svg><use href="#i-whatsapp"/></svg> Continuar por WhatsApp</button>
+          <p class="form-fineprint">Esto no confirma automáticamente un turno. La clínica coordinará la disponibilidad por WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section location-section" id="ubicacion">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-copy">
+            <span class="eyebrow">Dónde estamos</span>
+            <h2>Encontranos en Corrientes Capital.</h2>
+            <p class="lead">Estamos para acompañarte en el cuidado de tu sonrisa. Consultá por WhatsApp y encontrá cómo llegar al consultorio.</p>
+            <div class="info-row"><span class="info-icon"><svg><use href="#i-pin"/></svg></span><div><strong>Dirección</strong><span>Dr. Carrillo 797, planta baja<br>Corrientes Capital, Argentina</span></div></div>
+            <div class="info-row"><span class="info-icon"><svg><use href="#i-clock"/></svg></span><div><strong>Horarios de atención</strong><span>Lunes a viernes: 9:00 a 12:00 y 16:00 a 20:30 h<br>Sábados y domingos: cerrado</span></div></div>
+            <div class="info-row"><span class="info-icon"><svg><use href="#i-whatsapp"/></svg></span><div><strong>Contacto</strong><a href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp: +54 379 463-3850</a></div></div>
+            <div class="location-actions">
+              <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Roma%20Cl%C3%ADnica%20Dental%2C%20Dr.%20Ram%C3%B3n%20Carrillo%20797%2C%20Corrientes%2C%20Argentina" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Cómo llegar</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/roma.clinica.dental/" target="_blank" rel="noopener"><svg><use href="#i-instagram"/></svg> Instagram</a>
+            </div>
+          </div>
+          <div class="map-card" aria-label="Mapa de ubicación de ROMA Clínica Dental en Google Maps">
+            <iframe title="Ubicación de ROMA Clínica Dental, Corrientes Capital" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d631.6537920131134!2d-58.841967421455124!3d-27.475615488781088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456d007e5dff0b%3A0x5cabf2716c022820!2sRoma%20Cl%C3%ADnica%20Dental!5e1!3m2!1ses!2sar!4v1792773004165!5m2!1ses!2sar" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-card">
+          <span class="eyebrow">ROMA Clínica Dental</span>
+          <h2>Una sonrisa cuidada empieza con una consulta.</h2>
+          <p>Escribinos por WhatsApp para consultar por un tratamiento o coordinar tu próximo turno.</p>
+          <a class="btn btn-primary" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20reservar%20un%20turno." target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg> Quiero reservar mi turno</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="footer-brand" href="#inicio" style="text-decoration:none"><img src="assets/logo-roma.png" alt="Logo ROMA Clínica Dental" width="110" height="72"><span><strong>ROMA CLÍNICA DENTAL</strong><span>Atención para niños y adultos · Corrientes</span></span></a>
+        <div class="footer-links"><a href="#servicios">Servicios</a><a href="#equipo">Nuestro equipo</a><a href="#turnos">Turnos</a><a href="#ubicacion">Ubicación</a><a href="https://www.instagram.com/roma.clinica.dental/" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+      <div class="footer-bottom"><p>© <span id="year"></span> ROMA Clínica Dental. Todos los derechos reservados.</p><p>Dr. Carrillo 797, planta baja · Corrientes Capital, Argentina</p></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20consultar%20por%20un%20turno." target="_blank" rel="noopener" aria-label="Escribir a ROMA Clínica Dental por WhatsApp"><svg><use href="#i-whatsapp"/></svg><span>Escribinos</span></a>
+  <script>
+    (function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const bookingForm = document.getElementById('bookingForm');
+      const year = document.getElementById('year');
+      const phone = '5493794633850';
+      if (year) year.textContent = new Date().getFullYear();
+
+      menuToggle.addEventListener('click', function () {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        menuToggle.innerHTML = isOpen ? '<svg><use href="#i-x"/></svg>' : '<svg><use href="#i-menu"/></svg>';
+      });
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Abrir menú');
+          menuToggle.innerHTML = '<svg><use href="#i-menu"/></svg>';
+        });
+      });
+
+      document.querySelectorAll('.service-cta').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          const service = link.getAttribute('data-service');
+          if (!service) return;
+          event.preventDefault();
+          const message = 'Hola, ROMA Clínica Dental. Quisiera consultar por: ' + service + '. ¿Me podrían informar sobre disponibilidad de turnos?';
+          window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+        });
+      });
+
+      bookingForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!bookingForm.reportValidity()) return;
+        const data = new FormData(bookingForm);
+        const name = String(data.get('patientName') || '').trim();
+        const service = String(data.get('service') || '').trim();
+        const preferredDay = String(data.get('preferredDay') || '').trim();
+        const contactPreference = String(data.get('contactPreference') || '').trim();
+        const details = String(data.get('details') || '').trim();
+        let message = 'Hola, ROMA Clínica Dental. Quisiera consultar por un turno.\n\n';
+        message += 'Nombre: ' + name + '\n';
+        message += 'Servicio: ' + service + '\n';
+        if (preferredDay) message += 'Día/horario preferido: ' + preferredDay + '\n';
+        if (contactPreference && contactPreference !== 'No lo indiqué') message += 'Primera consulta: ' + contactPreference + '\n';
+        if (details) message += 'Comentario: ' + details + '\n';
+        message += '\n¿Me podrían informar la disponibilidad?';
+        window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+      });
+    })();
+  </script>
+</body>
+</html>
