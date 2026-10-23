@@ -309,6 +309,12 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
+    .firma-te { background: #161415; padding: 14px 16px; text-align: center; }
+    .firma-te a { display: inline-flex; align-items: center; gap: 10px; color: #F3E9DA; text-decoration: none; font: 500 14px/1 system-ui, sans-serif; }
+    .firma-te img { height: 28px; width: auto; opacity: 0.9; }
+    .firma-te a:hover img, .firma-te a:focus-visible img { opacity: 1; }
+    .firma-te a:focus-visible { outline: 2px solid #9FBD2B; outline-offset: 4px; }
+    @media (max-width: 600px) { .firma-te img { height: 24px; } }
   </style>
   <script type="application/ld+json">
   {
@@ -514,6 +520,12 @@
       <div class="footer-bottom"><p>© <span id="year"></span> ROMA Clínica Dental. Todos los derechos reservados.</p></div>
     </div>
   </footer>
+  <div class="firma-te">
+    <a href="https://terereestudio.com.ar" rel="noopener">
+      <span>Desarrollado por</span>
+      <img src="assets/firma-terereestudio.webp" width="360" height="120" alt="Tereré Estudio" loading="lazy">
+    </a>
+  </div>
 
   <a class="whatsapp-float" href="https://wa.me/5493794633850?text=Hola%2C%20ROMA%20Cl%C3%ADnica%20Dental.%20Quisiera%20consultar%20por%20un%20turno." target="_blank" rel="noopener" aria-label="Escribir a ROMA Clínica Dental por WhatsApp"><svg><use href="#i-whatsapp"/></svg><span>Escribinos</span></a>
   <script>
