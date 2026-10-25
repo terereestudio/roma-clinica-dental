@@ -107,6 +107,20 @@
         if (!reduce) requestAnimationFrame(frame);
         window.addEventListener('resize', layout);
       }
+      const MAP_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d631.6537920131134!2d-58.841967421455124!3d-27.475615488781088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456d007e5dff0b%3A0x5cabf2716c022820!2sRoma%20Cl%C3%ADnica%20Dental!5e1!3m2!1ses!2sar!4v1792773004165!5m2!1ses!2sar';
+      const mapCard = document.getElementById('mapCard');
+      const mapLoad = document.getElementById('mapLoad');
+      if (mapCard && mapLoad) {
+        mapLoad.addEventListener('click', function () {
+          const frame = document.createElement('iframe');
+          frame.title = 'Ubicación de ROMA Clínica Dental, Corrientes Capital';
+          frame.setAttribute('loading', 'lazy');
+          frame.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+          frame.setAttribute('allowfullscreen', '');
+          frame.src = MAP_SRC;
+          mapCard.replaceChildren(frame);
+        });
+      }
       const GENERIC_ERROR = 'No pudimos procesar tu consulta. Probá de nuevo o escribinos directamente por WhatsApp.';
       const loadedAt = Date.now();
       const statusBox = document.getElementById('formStatus');
@@ -131,6 +145,11 @@
           if (statusBox) statusBox.textContent = GENERIC_ERROR;
           return;
         }
+        const payload = new URLSearchParams({
+          'form-name': 'turnos', 'bot-field': '', patientName: name, service: service,
+          preferredDay: preferredDay, contactPreference: contactPreference, details: details, consent: 'si'
+        });
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: payload.toString() }).catch(function () {});
         submitBtn.disabled = true;
         setTimeout(function () { submitBtn.disabled = false; }, 3000);
         let message = 'Hola, ROMA Clínica Dental. Quisiera consultar por un turno.\n\n';

@@ -7,16 +7,13 @@
   <title>ROMA Clínica Dental | Odontología en Corrientes Capital</title>
   <meta name="description" content="En ROMA Clínica Dental cuidamos sonrisas de niños y adultos en Corrientes Capital. Odontología general, odontopediatría, ortodoncia, endodoncia y más. Reservá tu turno por WhatsApp.">
   <meta name="robots" content="index, follow">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
   <meta property="og:title" content="ROMA Clínica Dental | Tu sonrisa, en buenas manos">
   <meta property="og:description" content="Atención odontológica para niños y adultos en Corrientes Capital. Consultá y reservá tu turno por WhatsApp.">
   <meta property="og:image" content="assets/logo-roma.png">
   <link rel="icon" type="image/png" href="assets/logo-roma.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <script type="application/ld+json">
   {
@@ -177,10 +174,11 @@
             <li><svg><use href="#i-check"/></svg><span>La clínica te responderá para coordinar el turno.</span></li>
           </ul>
         </div>
-        <form class="booking-card" id="bookingForm">
+        <form class="booking-card" id="bookingForm" name="turnos" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias/">
+          <input type="hidden" name="form-name" value="turnos">
           <h3>Solicitá tu turno</h3>
           <p>Los campos con * son obligatorios.</p>
-          <div class="hp" aria-hidden="true"><label for="website">Sitio web (no completar)</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="hp" aria-hidden="true"><label for="website">Sitio web (no completar)</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"><input type="text" name="bot-field" tabindex="-1" autocomplete="off"></div>
           <div class="form-grid">
             <div class="field"><label for="patientName">Tu nombre *</label><input id="patientName" name="patientName" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" maxlength="80" required></div>
             <div class="field"><label for="serviceSelect">Servicio *</label><select id="serviceSelect" name="service" required><option value="" selected disabled>Elegí una opción</option><option>Odontología general</option><option>Odontopediatría</option><option>Ortodoncia</option><option>Contenciones</option><option>Endodoncia / tratamiento de conducto</option><option>Limpieza dental</option><option>Blanqueamiento / estética dental</option><option>Otro / no estoy seguro</option></select></div>
@@ -211,8 +209,12 @@
               <a class="btn btn-secondary" href="https://www.instagram.com/roma.clinica.dental/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-instagram"/></svg> Instagram</a>
             </div>
           </div>
-          <div class="map-card" aria-label="Mapa de ubicación de ROMA Clínica Dental en Google Maps">
-            <iframe title="Ubicación de ROMA Clínica Dental, Corrientes Capital" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d631.6537920131134!2d-58.841967421455124!3d-27.475615488781088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456d007e5dff0b%3A0x5cabf2716c022820!2sRoma%20Cl%C3%ADnica%20Dental!5e1!3m2!1ses!2sar!4v1792773004165!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="map-card" id="mapCard" aria-label="Mapa de ubicación de ROMA Clínica Dental en Google Maps">
+            <div class="map-facade">
+              <span class="map-facade-icon"><svg><use href="#i-pin"/></svg></span>
+              <p>Al ver el mapa interactivo, te conectás con Google Maps.</p>
+              <button class="btn btn-primary" type="button" id="mapLoad">Ver mapa interactivo</button>
+            </div>
           </div>
         </div>
       </div>

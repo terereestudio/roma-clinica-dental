@@ -1,0 +1,2 @@
+# Redirecciones (Netlify). HTTPS y dominio principal los maneja Netlify.
+/index.html  /  301

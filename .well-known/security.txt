@@ -1,4 +1,4 @@
 # Contacto para reportes de seguridad
-Contact: mailto:[COMPLETAR-correo-de-contacto]
+Contact: mailto:[COMPLETAR-email-de-seguridad-Tereré-Estudio]
 Expires: 2027-10-25T00:00:00.000Z
 Preferred-Languages: es
