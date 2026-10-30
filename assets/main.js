@@ -117,6 +117,8 @@
           frame.setAttribute('loading', 'lazy');
           frame.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
           frame.setAttribute('allowfullscreen', '');
+          frame.setAttribute('width', '100%');
+          frame.setAttribute('height', '420');
           frame.src = MAP_SRC;
           mapCard.replaceChildren(frame);
         });

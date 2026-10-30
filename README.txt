@@ -5,7 +5,7 @@ Contenido
 - privacidad.html: política de privacidad (Ley 25.326). Tiene campos [COMPLETAR].
 - 404.html: página de error personalizada.
 - assets/styles.css y assets/main.js: estilos y script, en archivos separados para cumplir la CSP.
-- assets/logo-roma.png, assets/endodoncia-visual.png, assets/team-*.webp, assets/firma-terereestudio.webp: imágenes.
+- assets/logo-roma.webp, assets/endodoncia-visual.webp, assets/team-*.webp, assets/firma-terereestudio.webp: imágenes.
 - robots.txt, .well-known/security.txt: contacto de seguridad (pendiente de completar).
 - _headers y _redirects (Netlify): cabeceras de seguridad y redirecciones.
 - gracias/index.html: página a la que va el formulario sin JavaScript.
